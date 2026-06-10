@@ -2,50 +2,259 @@
 <html>
 <head>
   <title>The View From The Other Sun</title>
-<style>
-  body {
-    background: black;
-    color: white;
-    font-family: monospace;
-    padding: 40px;
-  }
-  a {
-    color: cyan;
-  }
-  li {
-    margin-bottom: 12px; /* adds space between entries */
-  }
-</style>
+  <style>
+    body {
+      background: black;
+      color: white;
+      font-family: monospace;
+      padding: 40px;
+    }
+    a { color: cyan; }
+    li { margin-bottom: 12px; }
+ 
+    .page-layout {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px;
+    }
+    .entry-list {
+      flex: 1;
+      min-width: 0;
+    }
+ 
+    /* ── ROSTER ── */
+    .vftos-roster {
+      display: flex;
+      gap: 10px;
+      flex-wrap: nowrap;
+      flex-shrink: 0;
+      align-items: flex-start;
+      padding-top: 4px;
+    }
+    .vftos-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 7px;
+      width: 88px;
+    }
+    .vftos-img {
+      width: 88px;
+      height: 108px;
+      border: 2px solid #1a1a1a;
+      overflow: hidden;
+      position: relative;
+      background: #0a0a0a;
+      flex-shrink: 0;
+    }
+    .vftos-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+    }
+    .vftos-img .vftos-tint {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      pointer-events: none;
+    }
+    .vftos-img.vftos-locked img {
+      filter: brightness(0.12);
+    }
+    .vftos-img.vftos-locked::after {
+      content: "?";
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 34px;
+      font-family: monospace;
+      color: #2a2a2a;
+      font-weight: bold;
+    }
+    .vftos-name {
+      font-family: monospace;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-align: center;
+    }
+    .vftos-name.vftos-locked { color: #222 !important; }
+    .vftos-hint {
+      font-family: monospace;
+      font-size: 9px;
+      color: #2a2a2a;
+      text-align: center;
+      margin-top: -4px;
+      line-height: 1.3;
+    }
+  </style>
 </head>
-
 <body>
-
-<h1>View From The Other Sun</h1>
-<div style="margin: 1.5rem 0; border-left: 3px solid var(--color-border-secondary); padding: 1rem 1.5rem; background: var(--color-background-secondary); border-radius: 0 8px 8px 0;">
-  <p style="font-family: Georgia, serif; font-size: 17px; line-height: 1.8; font-style: italic; margin: 0 0 0.75rem 0;">
-    "For small creatures such as we, the vastness is bearable only through love."
-  </p>
-  <p style="font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; font-weight: 500; margin: 0; opacity: 0.6;">— Carl Sagan</p>
+ 
+<div class="page-layout">
+ 
+  <!-- LEFT: title + quote + entry list -->
+  <div class="entry-list">
+    <h1>View From The Other Sun</h1>
+ 
+    <div style="margin: 1.5rem 0; border-left: 3px solid #333; padding: 1rem 1.5rem; background: #0d0d0d; border-radius: 0 8px 8px 0;">
+      <p style="font-family: Georgia, serif; font-size: 17px; line-height: 1.8; font-style: italic; margin: 0 0 0.75rem 0;">
+        "For small creatures such as we, the vastness is bearable only through love."
+      </p>
+      <p style="font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; font-weight: 500; margin: 0; opacity: 0.6;">— Carl Sagan</p>
+    </div>
+ 
+    <li><a href="entry1.html">Entry 1 "Welcome To Your New Home"</a></li>
+    <li><a href="entry2.html">Entry 1 Continued "Fifth From The Sun"</a></li>
+    <li><a href="entry3.html">Entry 1 Continued "Parents"</a></li>
+    <li><a href="entry4.html">Entry 2 "Captain's Chair"</a></li>
+    <li><a href="entry5.html">Entry 2 Intermission "Cat-and-Squirrel"</a></li>
+    <li><a href="entry6.html">Entry 2 Continued "Nose Spin"</a></li>
+    <li><a href="entry7.html">Homebase Log 1 "Lalo the Tiger"</a></li>
+    <li><a href="entry8.html">Entry 3 "Cam and Cosmo"</a></li>
+    <li><a href="entry9.html">Entry 3 Intermission "Nexus of the Universe"</a></li>
+    <li><a href="entry10.html">Homebase Log 2 "Sidney and Commish"</a></li>
+    <li><a href="entry11.html">Entry 4 "Passing Saturn"</a></li>
+    <li><a href="entry12.html">COMING LIVE FROM EARTH! "Feat. Donna Stellaire and Larry"</a></li>
+    <li><a href="entry13.html">Entry 5 "Diagnostics"</a></li>
+    <li><a href="entry14.html">Entry 5 Continued "And The System Update"</a></li>
+    <li><a href="entry15.html">Entry 5 Intermission "Making Friends"</a></li>
+    <li><a href="entry16.html">Homebase Log 3 "Kuwait"</a></li>
+    <li><a href="entry17.html">Homebase Log 3 Continued "Raccoon House Music"</a></li>
+    <li><a href="entry18.html">Entry 6 "Error Logs In Korean"</a></li>
+    <li><a href="entry19.html">Entry 6 Continued "Four Days"</a></li>
+    <li><a href="entry20.html">Homebase Log 4 "Clara"</a></li>
+    <li><a href="entry21.html">Log Entry 7 "Uranus"</a></li>
+    <li><a href="entry22.html">Log Entry 7 Continued "An Eternity Marched"</a></li>
+  </div>
+ 
+  <!-- RIGHT: character roster -->
+  <div class="vftos-roster" id="vftos-roster"></div>
+ 
 </div>
-<li><a href="entry1.html">Entry 1 "Welcome To Your New Home"</a></li>
-<li><a href="entry2.html">Entry 1 Continued "Fifth From The Sun"</a></li>
-<li><a href="entry3.html">Entry 1 Continued "Parents"</a></li>
-<li><a href="entry4.html">Entry 2 "Captain's Chair"</a></li>
-<li><a href="entry5.html">Entry 2 Intermission "Cat-and-Squirrel"</a></li>
-<li><a href="entry6.html">Entry 2 Continued "Nose Spin"</a></li>
-<li><a href="entry7.html">Homebase Log 1 "Lalo the Tiger"</a></li>
-<li><a href="entry8.html">Entry 3 "Cam and Cosmo"</a></li>
-<li><a href="entry9.html">Entry 3 Intermission "Nexus of the Universe"</a></li>
-<li><a href="entry10.html">Homebase Log 2 "Sidney and Commish"</a></li>
-<li><a href="entry11.html">Entry 4 "Passing Saturn"</a></li>
-<li><a href="entry12.html">COMING LIVE FROM EARTH! "Feat. Donna Stellaire and Larry"</a></li>
-<li><a href="entry13.html">Entry 5 "Diagnostics"</a></li>
-<li><a href="entry14.html">Entry 5 Continued "And The System Update"</a></li>
-<li><a href="entry15.html">Entry 5 Intermission "Making Friends"</a></li>
-<li><a href="entry16.html">Homebase Log 3 "Kuwait"</a></li>
-<li><a href="entry17.html">Homebase Log 3 Continued "Raccoon House Music"</a></li>
-<li><a href="entry18.html">Entry 6 "Error Logs In Korean"</a></li>
-<li><a href="entry19.html">Entry 6 Continued "Four Days"</a></li>
-<li><a href="entry20.html">Homebase Log 4 "Clara"</a></li>
-<li><a href="entry21.html">Log Entry 7 "Uranus"</a></li>
-<li><a href="entry22.html">Log Entry 7 Continued "An Eternity Marched"</a></li>
+ 
+<script>
+(function () {
+  var CHARS = [
+    {
+      id: 'cosmo',
+      name: 'Cosmo',
+      img: 'squirrelsilhouette.png',
+      color: 'white',
+      tint: 'rgba(255,255,255,0.07)',
+      border: '#555555',
+      unlockKey: 'vftos_entry1'
+    },
+    {
+      id: 'cam',
+      name: 'Cam',
+      img: 'mansil.jpg',
+      color: 'blue',
+      tint: 'rgba(0,0,255,0.10)',
+      border: 'blue',
+      unlockKey: 'vftos_entry1'
+    },
+    {
+      id: 'commish',
+      name: 'Commish',
+      img: 'femalesil.jpg',
+      color: 'crimson',
+      tint: 'rgba(220,20,60,0.10)',
+      border: 'crimson',
+      unlockKey: 'vftos_entry7'
+    },
+    {
+      id: 'sidney',
+      name: 'Sidney',
+      img: 'mansil.jpg',
+      color: 'orange',
+      tint: 'rgba(255,165,0,0.10)',
+      border: 'orange',
+      unlockKey: 'vftos_entry7'
+    },
+    {
+      id: 'larry',
+      name: 'Larry',
+      img: 'mansil.jpg',
+      color: 'yellow',
+      tint: 'rgba(255,255,0,0.08)',
+      border: 'yellow',
+      unlockKey: 'vftos_entry12'
+    },
+    {
+      id: 'priya',
+      name: 'Priya',
+      img: 'femalesil.jpg',
+      color: 'lightblue',
+      tint: 'rgba(173,216,230,0.10)',
+      border: 'lightblue',
+      unlockKey: 'vftos_entry10'
+    }
+  ];
+ 
+  var HINTS = {
+    vftos_entry7:  'Homebase Log 1',
+    vftos_entry10: 'Homebase Log 2',
+    vftos_entry12: 'Entry 12'
+  };
+ 
+  function isUnlocked(key) {
+    return key === 'vftos_entry1' || localStorage.getItem(key) === 'true';
+  }
+ 
+  function render() {
+    var roster = document.getElementById('vftos-roster');
+    roster.innerHTML = '';
+ 
+    CHARS.forEach(function (c) {
+      var unlocked = isUnlocked(c.unlockKey);
+ 
+      var card = document.createElement('div');
+      card.className = 'vftos-card';
+ 
+      var imgWrap = document.createElement('div');
+      imgWrap.className = 'vftos-img' + (unlocked ? '' : ' vftos-locked');
+      if (unlocked) {
+        imgWrap.style.borderColor = c.border;
+        imgWrap.style.background  = c.tint;
+      }
+ 
+      var img = document.createElement('img');
+      img.src = c.img;
+      img.alt = unlocked ? c.name : '???';
+      imgWrap.appendChild(img);
+ 
+      if (unlocked) {
+        var tintDiv = document.createElement('div');
+        tintDiv.className = 'vftos-tint';
+        tintDiv.style.background = c.tint;
+        imgWrap.appendChild(tintDiv);
+      }
+ 
+      var name = document.createElement('div');
+      name.className = 'vftos-name' + (unlocked ? '' : ' vftos-locked');
+      name.style.color = unlocked ? c.color : '#222';
+      name.textContent = unlocked ? c.name : '???';
+ 
+      card.appendChild(imgWrap);
+      card.appendChild(name);
+ 
+      if (!unlocked) {
+        var hint = document.createElement('div');
+        hint.className = 'vftos-hint';
+        hint.textContent = 'Unlocks: ' + (HINTS[c.unlockKey] || c.unlockKey);
+        card.appendChild(hint);
+      }
+ 
+      roster.appendChild(card);
+    });
+  }
+ 
+  render();
+})();
+</script>
+ 
+</body>
+</html>

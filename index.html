@@ -145,6 +145,7 @@
       tint: 'rgba(0,0,0,0)',
       border: '#555555',
       unlockKey: 'vftos_entry1'
+      imgStyle: 'filter: invert(1);'
     },
     {
       id: 'cam',
@@ -223,6 +224,7 @@
       var img = document.createElement('img');
       img.src = c.img;
       img.alt = unlocked ? c.name : '???';
+      if (c.imgStyle) img.style.cssText = c.imgStyle;  // ← add this line
       imgWrap.appendChild(img);
  
       if (unlocked) {
